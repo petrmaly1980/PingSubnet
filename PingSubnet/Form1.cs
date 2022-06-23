@@ -41,7 +41,7 @@ namespace PingSubnet
                     {
                         try
                         {
-                            addr = IPAddress.Parse(textBox1.Text + ToString());
+                            addr = IPAddress.Parse(textBox1.Text + i.ToString());
                             host = Dns.GetHostEntry(addr);
                             name = host.HostName;
 
