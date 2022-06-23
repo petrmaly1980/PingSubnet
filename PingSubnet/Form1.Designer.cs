@@ -35,6 +35,7 @@
             this.cIP_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cHostname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(104, 39);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(277, 22);
             this.textBox1.TabIndex = 1;
@@ -59,12 +60,13 @@
             // buttonScan
             // 
             this.buttonScan.Location = new System.Drawing.Point(391, 39);
-            this.buttonScan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonScan.Margin = new System.Windows.Forms.Padding(4);
             this.buttonScan.Name = "buttonScan";
             this.buttonScan.Size = new System.Drawing.Size(100, 28);
             this.buttonScan.TabIndex = 2;
             this.buttonScan.Text = "Scan";
             this.buttonScan.UseVisualStyleBackColor = true;
+            this.buttonScan.Click += new System.EventHandler(this.buttonScan_Click);
             // 
             // dataGridView1
             // 
@@ -103,6 +105,10 @@
             this.cStatus.Name = "cStatus";
             this.cStatus.ReadOnly = true;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -112,7 +118,7 @@
             this.Controls.Add(this.buttonScan);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Scan Subnet";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -130,6 +136,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cIP_Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn cHostname;
         private System.Windows.Forms.DataGridViewTextBoxColumn cStatus;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
